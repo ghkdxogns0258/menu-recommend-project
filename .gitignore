@@ -36,10 +36,20 @@ ENV/
 .ENV/
 venv.bak/
 
-# data and configuration
+# data and configuration (환경 설정 파일만 무시)
 *.db
 *.sqlite
-*.json
+
+# 환경 설정용 JSON 파일 무시
+.env.json
+
+# 메뉴 데이터 파일 및 필수 JSON 파일은 추적
+!backend/data/menu_data.json
+
+# 패키지 관리 파일도 예외 처리
+!package-lock.json
+!frontend/package-lock.json
+!backend/package-lock.json
 
 # config files and secrets
 .env*

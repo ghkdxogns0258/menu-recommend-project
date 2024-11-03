@@ -1,39 +1,43 @@
+// src/pages/index.tsx
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { API_URL } from '../../config/env';
-
-type Menu = {
-    menu: string;
-    attributes: string[];
-};
+import { fetchMenuData, sendFeedback, Menu } from '../utils/menu_utils';
+import MenuDisplay from '../components/menu_display';
+import FeedbackButtons from '../components/feedback_buttons';
 
 const HomePage: React.FC = () => {
     const [menu, setMenu] = useState<Menu | null>(null);
 
-    useEffect(() => {
-        const fetchMenu = async () => {
-            try {
-                const response = await axios.get(`${API_URL}/recommend`);
-                setMenu(response.data);
-            } catch (error) {
-                console.error("Failed to fetch menu", error);
-            }
-        };
+    // 메뉴 데이터 로드
+    const loadMenu = async () => {
+        const data = await fetchMenuData();
+        setMenu(data);
+    };
 
-        fetchMenu();
+    // 좋아요 버튼 클릭 시 실행되는 함수
+    const handleLike = async () => {
+        if (menu) {
+            await sendFeedback(menu.name, true); // 좋아요 피드백 전송
+            loadMenu(); // 새로운 메뉴 불러오기
+        }
+    };
+
+    // 싫어요 버튼 클릭 시 실행되는 함수
+    const handleDislike = async () => {
+        if (menu) {
+            await sendFeedback(menu.name, false); // 싫어요 피드백 전송
+            loadMenu(); // 새로운 메뉴 불러오기
+        }
+    };
+
+    // 페이지 로드 시 메뉴 데이터를 처음 한 번 불러옴
+    useEffect(() => {
+        loadMenu();
     }, []);
 
     return (
         <div>
-            <h1>오늘의 추천 메뉴</h1>
-            {menu ? (
-                <div>
-                    <h2>{menu.menu}</h2>
-                    <p>특징: {menu.attributes.join(", ")}</p>
-                </div>
-            ) : (
-                <p>메뉴를 불러오는 중...</p>
-            )}
+            <MenuDisplay menu={menu} />
+            <FeedbackButtons onLike={handleLike} onDislike={handleDislike} />
         </div>
     );
 };
