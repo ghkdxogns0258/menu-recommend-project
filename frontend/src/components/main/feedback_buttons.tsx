@@ -1,4 +1,3 @@
-// src/components/FeedbackButtons.tsx
 type FeedbackButtonsProps = {
     onLike: () => void;
     onDislike: () => void;

@@ -1,9 +1,7 @@
-# model/recommendation_model.py
-
 import torch
 import torch.nn as nn
 
-# 메뉴 추천 신경망 모델 클래스 정의
+# 신경망 모델 클래스 정의
 class MenuRecommendationNet(nn.Module):
     def __init__(self, input_size):
         super(MenuRecommendationNet, self).__init__()
