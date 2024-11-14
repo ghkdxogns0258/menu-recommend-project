@@ -1,45 +1,31 @@
-// src/pages/index.tsx
-import { useEffect, useState } from 'react';
-import { fetchMenuData, sendFeedback, Menu } from '../utils/menu_utils';
-import MenuDisplay from '../components/menu_display';
-import FeedbackButtons from '../components/feedback_buttons';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const HomePage: React.FC = () => {
-    const [menu, setMenu] = useState<Menu | null>(null);
+const IndexPage: React.FC = () => {
+  const router = useRouter();
 
-    // 메뉴 데이터 로드
-    const loadMenu = async () => {
-        const data = await fetchMenuData();
-        setMenu(data);
-    };
-
-    // 좋아요 버튼 클릭 시 실행되는 함수
-    const handleLike = async () => {
-        if (menu) {
-            await sendFeedback(menu.name, true); // 좋아요 피드백 전송
-            loadMenu(); // 새로운 메뉴 불러오기
+  useEffect(() => {
+    // `user_id`가 세션에 저장되어 있는지 확인하고 저장
+    fetch('/get-session-user-id')
+      .then(response => response.json())
+      .then(data => {
+        if (data.user_id) {
+          sessionStorage.setItem('user_id', data.user_id);
         }
-    };
+      });
+  }, []);
 
-    // 싫어요 버튼 클릭 시 실행되는 함수
-    const handleDislike = async () => {
-        if (menu) {
-            await sendFeedback(menu.name, false); // 싫어요 피드백 전송
-            loadMenu(); // 새로운 메뉴 불러오기
-        }
-    };
+  const handleStartClick = () => {
+    router.push('/auth/auth_pages');
+  };
 
-    // 페이지 로드 시 메뉴 데이터를 처음 한 번 불러옴
-    useEffect(() => {
-        loadMenu();
-    }, []);
-
-    return (
-        <div>
-            <MenuDisplay menu={menu} />
-            <FeedbackButtons onLike={handleLike} onDislike={handleDislike} />
-        </div>
-    );
+  return (
+    <div>
+      <h2>환영합니다!</h2>
+      <p>시작하려면 버튼을 클릭하세요.</p>
+      <button onClick={handleStartClick}>시작하기</button>
+    </div>
+  );
 };
 
-export default HomePage;
+export default IndexPage;
