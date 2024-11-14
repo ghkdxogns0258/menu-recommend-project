@@ -1,3 +1,4 @@
+
 from flask import Blueprint, jsonify, request
 from utils.training.train import train_feedback
 from utils.logging.logger import logger

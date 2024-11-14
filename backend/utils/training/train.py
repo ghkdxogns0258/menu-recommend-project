@@ -1,4 +1,4 @@
-# train.py (수정된 코드)
+# train.py
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -21,9 +21,13 @@ criterion = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.01)
 
 # 피드백에 따른 모델 학습 함수 정의
-def train_feedback(menu, liked, epoch):
+def train_feedback(menu, liked, epoch, preferences, taste_profile):
     # 메뉴의 특성을 텐서로 변환
     features = torch.tensor(menu['features'], dtype=torch.float32)
+    
+    # 선호도와 입맛을 반영하여 초기 가중치를 설정
+    model.initialize_weights(preferences, taste_profile)
+    
     # 피드백을 레이블로 변환 (좋아요는 1, 싫어요는 0)
     label = torch.tensor([1.0 if liked else 0.0], dtype=torch.float32)
     

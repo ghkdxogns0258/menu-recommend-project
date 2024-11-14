@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 
 interface UserPreferencesProps {
   onSubmit: (preferences: {
-    taste: boolean;
-    value: boolean;
-    health: boolean;
-    cooking: boolean;
-    greasiness: boolean;
+    taste: number;
+    value: number;
+    health: number;
+    cooking: number;
+    greasiness: number;
   }) => void;
 }
 
 const UserPreferences: React.FC<UserPreferencesProps> = ({ onSubmit }) => {
   const [preferences, setPreferences] = useState({
-    taste: false,
-    value: false,
-    health: false,
-    cooking: false,
-    greasiness: false,
+    taste: 0,
+    value: 0,
+    health: 0,
+    cooking: 0,
+    greasiness: 0,
   });
 
-  const handleChange = (field: keyof typeof preferences) => {
-    setPreferences(prev => ({ ...prev, [field]: !prev[field] }));
+  const handleChange = (field: keyof typeof preferences, value: number) => {
+    setPreferences(prev => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -31,26 +31,21 @@ const UserPreferences: React.FC<UserPreferencesProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <input type="checkbox" checked={preferences.taste} onChange={() => handleChange('taste')} />
-        맛이 중요해!
-      </label>
-      <label>
-        <input type="checkbox" checked={preferences.value} onChange={() => handleChange('value')} />
-        가성비가 중요해!
-      </label>
-      <label>
-        <input type="checkbox" checked={preferences.health} onChange={() => handleChange('health')} />
-        건강이 중요해!
-      </label>
-      <label>
-        <input type="checkbox" checked={preferences.cooking} onChange={() => handleChange('cooking')} />
-        조리법이 중요해!
-      </label>
-      <label>
-        <input type="checkbox" checked={preferences.greasiness} onChange={() => handleChange('greasiness')} />
-        느끼함이 중요해!
-      </label>
+      {Object.keys(preferences).map((key) => (
+        <label key={key}>
+          {key} 중요도:
+          <select
+            value={preferences[key as keyof typeof preferences]}
+            onChange={(e) => handleChange(key as keyof typeof preferences, parseFloat(e.target.value))}
+          >
+            <option value={0}>전혀 중요하지 않음 (0)</option>
+            <option value={0.25}>별로 중요하지 않음 (0.25)</option>
+            <option value={0.5}>보통 (0.5)</option>
+            <option value={0.75}>중요함 (0.75)</option>
+            <option value={1}>매우 중요함 (1)</option>
+          </select>
+        </label>
+      ))}
       <button type="submit">다음으로</button>
     </form>
   );
