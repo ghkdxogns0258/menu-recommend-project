@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 화면 전체 높이 */
+  }
+  
+  .content {
+    flex: 1; /* 메인 콘텐츠 영역이 푸터를 밀어냄 */
+  }
+  
+  footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

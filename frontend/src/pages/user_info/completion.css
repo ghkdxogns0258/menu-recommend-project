@@ -1,0 +1,65 @@
+/* src/pages/completion.css */
+.completion-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+    background-color: #ececec; /* 부드러운 배경 색상 */
+    text-align: center;
+  }
+  
+  .completion-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0; /* 초기 투명도 */
+    transform: translateY(-20px); /* 위로 이동된 위치 */
+    animation: fade-in-move 0.8s ease-in-out forwards; /* 애니메이션 */
+  }
+  
+  .completion-text {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 40px;
+    opacity: 0; /* 초기 투명도 */
+    transform: translateY(-20px); /* 위로 이동된 위치 */
+    animation: fade-in-move 0.8s ease-in-out forwards;
+    animation-delay: 0.5s; /* 애니메이션 딜레이 */
+  }
+  
+  .completion-button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0; /* 초기 투명도 */
+    transform: translateY(-20px); /* 위로 이동된 위치 */
+    animation: fade-in-move 0.8s ease-in-out forwards;
+    animation-delay: 1s; /* 애니메이션 딜레이 */
+  }
+  
+  .completion-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .completion-button:active {
+    background-color: #004494;
+  }
+  
+  /* 애니메이션 정의 */
+  @keyframes fade-in-move {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /* 초기 위치 */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+  

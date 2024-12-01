@@ -1,5 +1,7 @@
+// src/pages/index.tsx
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import WelcomePage from '../pages/welcome/welcome';
 
 const IndexPage: React.FC = () => {
   const router = useRouter();
@@ -16,16 +18,10 @@ const IndexPage: React.FC = () => {
   }, []);
 
   const handleStartClick = () => {
-    router.push('/auth/auth_pages');
+    router.push('/auth/auth');
   };
 
-  return (
-    <div>
-      <h2>환영합니다!</h2>
-      <p>시작하려면 버튼을 클릭하세요.</p>
-      <button onClick={handleStartClick}>시작하기</button>
-    </div>
-  );
+  return <WelcomePage onStartClick={handleStartClick} />;
 };
 
 export default IndexPage;

@@ -1,12 +1,12 @@
-import axios from './apiClient';
+import axios from './api_client';
 
 // 선호도 저장 함수
-export const saveUserPreferences = async (userId: string, preferences: object) => {
+export const saveUserPreferences = async (user_id: string, preferences: object) => {
   try {
-    console.log("Sending preferences data:", { user_id: userId, preferences });  // 로그 추가
+    console.log("Sending preferences data:", { user_id: user_id, preferences });  // 로그 추가
     // 선호도 전송
     const response = await axios.post('/user/preferences', {
-      user_id: userId,
+      user_id: user_id,
       preferences,
     });
     alert("정보가 저장되었습니다!");
@@ -18,7 +18,7 @@ export const saveUserPreferences = async (userId: string, preferences: object) =
 };
 
 // 입맛 정보 저장 함수
-export const saveUserTastes = async (userId: string, tastes: {
+export const saveUserTastes = async (user_id: string, tastes: {
   sweet: number;
   salty: number;
   spicy: number;
@@ -26,10 +26,10 @@ export const saveUserTastes = async (userId: string, tastes: {
   umami: number;
 }) => {
   try {
-    console.log("Sending taste data:", { user_id: userId, tastes });  // 로그 추가
+    console.log("Sending taste data:", { user_id: user_id, tastes });  
     // 입맛 정보 전송
     const response = await axios.post('/user/tastes', {
-      user_id: userId,
+      user_id: user_id,
       tastes, // tastes 객체를 그대로 전송
       is_info_complete: true,
     });

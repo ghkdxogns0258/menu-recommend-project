@@ -12,9 +12,10 @@ CREATE TABLE IF NOT EXISTS user_profile (
     name VARCHAR(100),
     age INTEGER,
     preferences JSONB,                         -- 선호도 정보 (예: {"taste": 0.5, "value": 0.75, ...})
-    taste_profile JSONB,                       -- 입맛 정보 (예: {"sweet": 0.5, "salty": 0.75, ...})
+    user_taste_profile JSONB,                       -- 입맛 정보 (예: {"sweet": 0.5, "salty": 0.75, ...})
+    recent_menus JSONB,                        -- 최근 선택 메뉴 (예: {"2024-11-18": "떡볶이"})
     is_info_complete BOOLEAN DEFAULT FALSE,    -- 정보 입력 완료 여부
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (user_id)
 );

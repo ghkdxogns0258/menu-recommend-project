@@ -1,8 +1,7 @@
-# db/user_db.py
-
 from db.database import SessionLocal
 from db.models.user_model import User
 from db.models.user_profile_model import UserProfile
+from utils.logging.logger import logger
 
 def create_user(provider_id, provider):
     """user_auth_db에 사용자 추가"""
@@ -36,41 +35,52 @@ def update_user_info_complete(user_id):
 def update_user_preferences(user_id, preferences):
     """사용자 선호도를 업데이트합니다."""
     with SessionLocal() as session:
-        try:
-            user_profile = session.query(UserProfile).filter(UserProfile.user_id == user_id).first()
-            if not user_profile:
-                # user_profile이 없으면 생성
-                user_profile = UserProfile(user_id=user_id)
-                session.add(user_profile)
-                session.commit()
+        user_profile = session.query(UserProfile).filter(UserProfile.user_id == user_id).first()
 
-            user_profile.preferences = preferences
-            session.commit()
-            print(f"Preferences updated successfully for user_id {user_id}")  # 로그 추가
-        except Exception as e:
-            session.rollback()  # 트랜잭션 롤백
-            print("Error updating preferences:", e)  # 예외 메시지 로그
-            return {"error": str(e)}, 500  # 예외 메시지를 클라이언트에 반환
+        # user_profile이 없으면 생성
+        if not user_profile:
+            user_profile = UserProfile(user_id=user_id, preferences=preferences)
+            session.add(user_profile)
+        else:
+            user_profile.preferences = preferences  # 선호도 업데이트
+
+        session.commit()
+        print(f"Preferences updated successfully for user_id {user_id}")
 
 def update_user_tastes(user_id, tastes):
-    """사용자 입맛 정보를 업데이트합니다."""
-    with SessionLocal() as session:
-        try:
+    """
+    사용자 입맛 정보를 업데이트합니다.
+    Args:
+        user_id (int): 사용자 ID.
+        tastes (dict): 사용자의 입맛 정보.
+    Returns:
+        dict: 처리 결과 메시지와 상태 코드.
+    """
+    try:
+        logger.debug(f"Starting update_user_tastes for user_id={user_id} with tastes={tastes}")
+        
+        with SessionLocal() as session:
+            # 사용자 프로필 검색
             user_profile = session.query(UserProfile).filter(UserProfile.user_id == user_id).first()
+            logger.debug(f"User profile found: {user_profile}")
+
+            # user_profile이 없으면 생성
             if not user_profile:
-                # user_profile이 없으면 생성
-                user_profile = UserProfile(user_id=user_id)
+                logger.info(f"No user profile found for user_id={user_id}. Creating a new profile.")
+                user_profile = UserProfile(user_id=user_id, user_taste_profile=tastes, is_info_complete=True)
                 session.add(user_profile)
-                session.commit()
+            else:
+                logger.info(f"Updating user_taste_profile for user_id={user_id}")
+                user_profile.user_taste_profile = tastes  # 입맛 정보 업데이트
+                user_profile.is_info_complete = True
 
-            # taste_profile에 tastes 객체를 그대로 할당
-            user_profile.taste_profile = tastes
-            user_profile.is_info_complete = True
-
+            # 변경사항 저장
             session.commit()
-            print(f"Taste profile updated successfully for user_id {user_id}")  # 로그 추가
+            logger.info(f"Taste profile successfully updated for user_id={user_id}")
+
             return {"message": "Taste profile updated successfully"}, 200
-        except Exception as e:
-            session.rollback()  # 트랜잭션 롤백
-            print("Error updating taste profile:", e)  # 예외 메시지 로그
-            return {"error": str(e)}, 500  # 예외 메시지를 클라이언트에 반환
+
+    except Exception as e:
+        logger.error(f"Error updating taste profile for user_id={user_id}: {e}", exc_info=True)
+        return {"error": "Internal server error"}, 500
+

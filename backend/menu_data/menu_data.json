@@ -1,370 +1,668 @@
 [
     {
         "name": "떡볶이",
-        "features": [1, 1, 0.66, 0.5, 1, 0.5]
+        "description": "매콤달콤한 한국 간식",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 1,
+            "salty": 1,
+            "spicy": 0.66,
+            "sour": 0.5,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "샐러드",
-        "features": [0, 0.25, 0, 0, 0, 0]
+        "description": "신선한 채소로 만든 건강식",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 0,
+            "sour": 0,
+            "umami": 0
+        },
+        "time_morning": true,
+        "time_lunch": true,
+        "time_dinner": false,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "비빔밥",
-        "features": [0.33, 1, 0.33, 0.5, 0.66, 0.25]
+        "description": "다양한 나물을 곁들인 한국 전통 음식",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.33,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": true,
+        "weather_rainy": true
     },
     {
         "name": "파스타",
-        "features": [0, 0.25, 0.66, 0.75, 0.66, 0.25]
+        "description": "고소한 크림과 토마토를 곁들인 양식",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 0.66,
+            "sour": 0.75,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "치킨",
-        "features": [0, 0.25, 1, 0.75, 1, 0.75]
+        "description": "바삭하고 고소한 닭튀김",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 1,
+            "sour": 0.75,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": false
     },
     {
         "name": "초밥",
-        "features": [0, 0.5, 0.33, 0.25, 0, 0.25]
+        "description": "신선한 생선과 밥을 곁들인 일본 요리",
+        "cuisine_type": "일식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.5,
+            "spicy": 0.33,
+            "sour": 0.25,
+            "umami": 0.25
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "마라탕",
-        "features": [1, 0.75, 0.66, 1, 1, 0.25]
+        "description": "매콤하고 얼얼한 중국식 국물 요리",
+        "cuisine_type": "중식",
+        "menu_features": {
+            "sweet": 1,
+            "salty": 0.75,
+            "spicy": 0.66,
+            "sour": 1,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "햄버거",
-        "features": [0, 0.25, 1, 0.75, 1, 0.75]
+        "description": "다양한 재료로 만든 빠른 간편식",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 1,
+            "sour": 0.75,
+            "umami": 0.75
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "카레",
-        "features": [0.66, 0.75, 0.5, 0.5, 0.66, 0.25]
+        "description": "진한 향신료의 깊은 맛을 자랑하는 요리",
+        "cuisine_type": "인도식",
+        "menu_features": {
+            "sweet": 0.66,
+            "salty": 0.75,
+            "spicy": 0.5,
+            "sour": 0.5,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "불고기",
-        "features": [0, 1, 0.33, 0.75, 0.66, 0.25]
+        "description": "얇게 썬 소고기를 간장 양념에 재워 구운 한국 전통 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.75,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": false
     },
     {
         "name": "된장찌개",
-        "features": [0, 1, 0.33, 0.5, 1, 0.25]
+        "description": "된장으로 맛을 낸 깊고 진한 한국 전통 찌개",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "우동",
-        "features": [0, 0.5, 0.33, 0.5, 0.66, 0.25]
+        "description": "두툼한 면발과 깊은 국물 맛이 특징인 일본 요리",
+        "cuisine_type": "일식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.5,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "쌀국수",
-        "features": [0.33, 0, 0, 0.25, 0.66, 0.25]
+        "description": "베트남 전통 요리로 향신료와 고기가 조화를 이룬 국수",
+        "cuisine_type": "베트남식",
+        "menu_features": {
+            "sweet": 0.33,
+            "salty": 0,
+            "spicy": 0,
+            "sour": 0.25,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "피자",
-        "features": [0, 0.25, 1, 1, 0.66, 0.75]
+        "description": "고소한 치즈와 다양한 토핑이 올라간 이탈리아 요리",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 1,
+            "sour": 1,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "김밥",
-        "features": [0, 1, 0.33, 0.5, 0, 0.5]
+        "description": "다양한 재료를 김과 밥으로 말아낸 간편식",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0
+        },
+        "time_morning": true,
+        "time_lunch": true,
+        "time_dinner": false,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "해물파전",
-        "features": [0, 1, 0.66, 0.25, 0.66, 0.75]
+        "description": "고소한 해물과 파를 듬뿍 넣은 한국 전통 부침개",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.66,
+            "sour": 0.25,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "잡채",
-        "features": [0, 1, 0.33, 1, 0.66, 0.5]
+        "description": "당면과 고기를 다양한 채소와 볶아낸 한국 전통 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 1,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "라면",
-        "features": [0.66, 1, 0.5, 0.75, 1, 0.25]
+        "description": "한국의 대표적인 매운 국물 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.66,
+            "salty": 1,
+            "spicy": 0.5,
+            "sour": 0.75,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "빵",
-        "features": [0, 0.25, 0.33, 0.5, 0, 0.75]
+        "description": "부드럽고 달콤한 간식으로 즐길 수 있는 베이커리",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0
+        },
+        "time_morning": true,
+        "time_lunch": false,
+        "time_dinner": false,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "감자탕",
-        "features": [0.33, 1, 0.66, 0.75, 1, 0.5]
+        "description": "얼큰하고 진한 국물 맛이 일품인 한국 전통 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.33,
+            "salty": 1,
+            "spicy": 0.66,
+            "sour": 0.75,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "부대찌개",
-        "features": [0.66, 1, 1, 1, 1, 0.5]
+        "description": "햄과 소시지가 어우러진 얼큰한 한국 전통 찌개",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.66,
+            "salty": 1,
+            "spicy": 1,
+            "sour": 1,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "갈비찜",
-        "features": [0, 1, 0.5, 0.75, 0.66, 0.5]
+        "description": "달콤하고 짭짤한 소갈비로 만든 한국 전통 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.5,
+            "sour": 0.75,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "냉면",
-        "features": [0, 1, 0, 0.5, 0, 0.25]
+        "description": "시원하고 새콤한 육수와 함께 먹는 면 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0,
+            "sour": 0.5,
+            "umami": 0
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "짬뽕",
-        "features": [1, 0.75, 0.66, 0.5, 1, 0.5]
+        "description": "매운 국물과 해산물이 어우러진 중국 요리",
+        "cuisine_type": "중식",
+        "menu_features": {
+            "sweet": 1,
+            "salty": 0.75,
+            "spicy": 0.66,
+            "sour": 0.5,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "탕수육",
-        "features": [0, 0.75, 1, 0.75, 0.66, 0.75]
+        "description": "달콤한 소스와 바삭한 튀김이 조화를 이루는 중국 요리",
+        "cuisine_type": "중식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.75,
+            "spicy": 1,
+            "sour": 0.75,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "오므라이스",
-        "features": [0, 0.5, 0.33, 0.5, 0.66, 0.25]
+        "description": "달걀로 감싼 볶음밥 위에 소스를 얹은 요리",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.5,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0.66
+        },
+        "time_morning": true,
+        "time_lunch": true,
+        "time_dinner": false,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": true
     },
     {
         "name": "토스트",
-        "features": [0, 0.25, 0.33, 0.5, 0.33, 0.5]
+        "description": "간단히 즐길 수 있는 달콤하거나 짭짤한 간식",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0.33
+        },
+        "time_morning": true,
+        "time_lunch": false,
+        "time_dinner": false,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "소고기 구이",
-        "features": [0, 1, 0.66, 0.75, 1, 1]
+        "description": "고소한 소고기를 구워낸 한국 전통 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.66,
+            "sour": 0.75,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "쭈꾸미 볶음",
-        "features": [1, 1, 0.33, 0.25, 1, 0.5]
+        "description": "쫄깃한 쭈꾸미와 매콤한 양념이 어우러진 볶음 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 1,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.25,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "비빔냉면",
-        "features": [0.66, 1, 0, 0.5, 0, 0.5]
+        "description": "시원한 면발과 매콤달콤한 양념이 특징인 한국 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.66,
+            "salty": 1,
+            "spicy": 0,
+            "sour": 0.5,
+            "umami": 0.5
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "치즈라면",
-        "features": [0.33, 1, 1, 0.75, 1, 0.5]
+        "description": "라면에 치즈를 더해 부드럽고 고소한 맛을 낸 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.33,
+            "salty": 1,
+            "spicy": 1,
+            "sour": 0.75,
+            "umami": 0.5
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "단팥빵",
-        "features": [0, 0.25, 0.33, 0.5, 0.33, 0.75]
+        "description": "달콤한 팥이 가득한 부드러운 빵",
+        "cuisine_type": "양식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.25,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 0.75
+        },
+        "time_morning": true,
+        "time_lunch": false,
+        "time_dinner": false,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "김치찌개",
-        "features": [0.66, 1, 0.33, 0.5, 1, 0.5]
+        "description": "매콤하고 짭짤한 한국의 대표 찌개 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0.66,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.5,
+            "umami": 1
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "돈가스",
-        "features": [0, 0.5, 1, 0.75, 0.66, 0.75]
+        "description": "고소한 돼지고기를 바삭하게 튀겨낸 일본식 요리",
+        "cuisine_type": "일식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.5,
+            "spicy": 1,
+            "sour": 0.75,
+            "umami": 0.75
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "회덮밥",
-        "features": [0, 0.5, 0.5, 0.25, 0.33, 0.5]
+        "description": "신선한 생선회와 각종 채소를 곁들인 한국 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.5,
+            "spicy": 0.5,
+            "sour": 0.25,
+            "umami": 0.5
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": false,
+        "weather_hot": true,
+        "weather_rainy": false
     },
     {
         "name": "볶음밥",
-        "features": [0, 0.75, 0.66, 0.5, 0.66, 0.5]
+        "description": "다양한 재료를 밥과 함께 볶아낸 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 0.75,
+            "spicy": 0.66,
+            "sour": 0.5,
+            "umami": 0.66
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": false,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     },
     {
         "name": "순대국",
-        "features": [0, 1, 0.33, 0.75, 1, 0.5]
-    },
-    {
-        "name": "스파게티",
-        "features": [0, 0.25, 1, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "카프레제 샐러드",
-        "features": [0, 0.25, 0, 0.25, 0, 1]
-    },
-    {
-        "name": "불닭볶음면",
-        "features": [1, 1, 0.66, 0.75, 1, 0.5]
-    },
-    {
-        "name": "쌀국수",
-        "features": [0.33, 0.75, 0, 0.25, 0.66, 0.25]
-    },
-    {
-        "name": "순두부찌개",
-        "features": [0.5, 1, 0.33, 0.5, 1, 0.25]
-    },
-    {
-        "name": "계란말이",
-        "features": [0, 1, 0.33, 0.5, 0.66, 0.25]
-    },
-    {
-        "name": "라자냐",
-        "features": [0, 0.25, 1, 0.75, 1, 0.5]
-    },
-    {
-        "name": "초코 케이크",
-        "features": [0, 0.25, 0.66, 0.5, 0.33, 1]
-    },
-    {
-        "name": "북엇국",
-        "features": [0, 1, 0, 0.25, 1, 0.25]
-    },
-    {
-        "name": "양꼬치",
-        "features": [0.66, 0.75, 1, 0.75, 1, 0.75]
-    },
-    {
-        "name": "어묵탕",
-        "features": [0, 1, 0.33, 0.25, 1, 0.5]
-    },
-    {
-        "name": "칼국수",
-        "features": [0, 1, 0.33, 0.5, 0.66, 0.25]
-    },
-    {
-        "name": "햄버거",
-        "features": [0, 0.25, 1, 0.75, 1, 0.75]
-    },
-    {
-        "name": "감자전",
-        "features": [0, 1, 0.5, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "군만두",
-        "features": [0, 0.5, 1, 0.5, 0.66, 0.75]
-    },
-    {
-        "name": "해물파스타",
-        "features": [0.33, 0.25, 0.66, 0.25, 0.66, 0.5]
-    },
-    {
-        "name": "된장국",
-        "features": [0, 1, 0.33, 0.25, 1, 0.25]
-    },
-    {
-        "name": "팟타이",
-        "features": [0.33, 0.75, 0.5, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "오징어볶음",
-        "features": [1, 1, 0.33, 0.25, 1, 0.5]
-    },
-    {
-        "name": "갈비탕",
-        "features": [0, 1, 0.5, 0.75, 1, 0.5]
-    },
-    {
-        "name": "옥수수 수프",
-        "features": [0, 0.25, 0.33, 0.5, 1, 0.25]
-    },
-    {
-        "name": "후라이드 치킨",
-        "features": [0, 0.5, 1, 1, 1, 0.75]
-    },
-    {
-        "name": "감자튀김",
-        "features": [0, 0.5, 1, 0.5, 1, 0.75]
-    },
-    {
-        "name": "닭갈비",
-        "features": [1, 1, 0.66, 0.75, 1, 0.5]
-    },
-    {
-        "name": "가츠동",
-        "features": [0, 0.5, 0.5, 0.75, 0.66, 0.5]
-    },
-    {
-        "name": "순두부찌개",
-        "features": [0.5, 1, 0.33, 0.5, 1, 0.25]
-    },
-    {
-        "name": "고추잡채",
-        "features": [1, 0.75, 0.66, 0.5, 1, 0.5]
-    },
-    {
-        "name": "갈비탕",
-        "features": [0, 1, 0.5, 0.75, 1, 0.5]
-    },
-    {
-        "name": "설렁탕",
-        "features": [0, 1, 0.33, 0.75, 1, 0.25]
-    },
-    {
-        "name": "육개장",
-        "features": [1, 1, 0.66, 0.75, 1, 0.5]
-    },
-    {
-        "name": "김치볶음밥",
-        "features": [0.66, 1, 0.5, 0.5, 1, 0.25]
-    },
-    {
-        "name": "순대국",
-        "features": [0, 1, 0.33, 0.75, 1, 0.5]
-    },
-    {
-        "name": "동태찌개",
-        "features": [0.33, 1, 0.5, 0.25, 1, 0.25]
-    },
-    {
-        "name": "짜장면",
-        "features": [0, 0.75, 0.5, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "삼겹살",
-        "features": [0, 1, 1, 0.75, 1, 0.75]
-    },
-    {
-        "name": "고등어구이",
-        "features": [0, 1, 0.66, 0.25, 1, 0.5]
-    },
-    {
-        "name": "오리불고기",
-        "features": [0.5, 1, 0.75, 0.75, 0.66, 0.75]
-    },
-    {
-        "name": "전복죽",
-        "features": [0, 1, 0, 0.5, 1, 0.25]
-    },
-    {
-        "name": "토마토 스파게티",
-        "features": [0, 0.25, 0.66, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "우럭 매운탕",
-        "features": [1, 1, 0.66, 0.25, 1, 0.5]
-    },
-    {
-        "name": "카레라이스",
-        "features": [0.5, 0.75, 0.33, 0.5, 0.75, 0.25]
-    },
-    {
-        "name": "장어 덮밥",
-        "features": [0, 0.5, 0.66, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "닭개장",
-        "features": [1, 1, 0.66, 0.75, 1, 0.5]
-    },
-    {
-        "name": "불고기",
-        "features": [0, 1, 0.33, 0.75, 0.66, 0.5]
-    },
-    {
-        "name": "메밀소바",
-        "features": [0, 0.5, 0, 0.5, 0, 0.5]
-    },
-    {
-        "name": "유부초밥",
-        "features": [0, 0.5, 0.5, 0.25, 0.33, 0.5]
-    },
-    {
-        "name": "양념 치킨",
-        "features": [0.66, 0.5, 1, 0.75, 0.66, 0.75]
-    },
-    {
-        "name": "굴짬뽕",
-        "features": [1, 0.75, 0.5, 0.25, 1, 0.5]
-    },
-    {
-        "name": "삼계탕",
-        "features": [0, 1, 0.33, 0.75, 1, 0.25]
-    },
-    {
-        "name": "냉메밀국수",
-        "features": [0, 0.5, 0, 0.25, 0, 0.5]
-    },
-    {
-        "name": "알리오 올리오",
-        "features": [0, 0.25, 0.66, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "카츠동",
-        "features": [0, 0.5, 0.5, 0.75, 0.66, 0.5]
-    },
-    {
-        "name": "도미 카츠",
-        "features": [0, 0.5, 0.75, 0.5, 0.66, 0.5]
-    },
-    {
-        "name": "도미 매운탕",
-        "features": [1, 1, 0.5, 0.25, 1, 0.5]
-    },
-    {
-        "name": "가쓰오 우동",
-        "features": [0, 0.5, 0.5, 0.25, 0.66, 0.5]
+        "description": "고소한 순대를 넣어 깊은 국물 맛을 자랑하는 한국 요리",
+        "cuisine_type": "한식",
+        "menu_features": {
+            "sweet": 0,
+            "salty": 1,
+            "spicy": 0.33,
+            "sour": 0.75,
+            "umami": 0.5
+        },
+        "time_morning": false,
+        "time_lunch": true,
+        "time_dinner": true,
+        "weather_cold": true,
+        "weather_hot": false,
+        "weather_rainy": true
     }
 ]

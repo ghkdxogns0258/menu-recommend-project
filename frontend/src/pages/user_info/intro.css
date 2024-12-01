@@ -1,0 +1,77 @@
+/* src/pages/user_info/intro.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fade-in 0.8s ease-in-out;
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.8;
+  margin: 10px 0;
+  opacity: 0; /* 초기 상태는 투명 */
+  animation: fade-in 0.8s ease-in-out forwards;
+}
+
+.description:nth-child(2) {
+  animation-delay: 0.5s; /* 두 번째 문구 딜레이 */
+}
+
+.description:nth-child(3) {
+  animation-delay: 1s; /* 세 번째 문구 딜레이 */
+}
+
+.description:nth-child(4) {
+  animation-delay: 1.5s; /* 네 번째 문구 딜레이 */
+}
+
+.button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0; /* 버튼도 초기에는 투명 */
+  animation: fade-in 0.8s ease-in-out forwards;
+  animation-delay: 2s; /* 버튼 딜레이 */
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button:active {
+  background-color: #3e8e41;
+}
+
+/* fade-in 애니메이션 정의 */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에서 위로 이동 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치 */
+  }
+}

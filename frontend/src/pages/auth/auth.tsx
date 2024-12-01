@@ -1,4 +1,4 @@
-// src/pages/auth_page.tsx
+// src/pages/auth.tsx
 import React from 'react';
 import LoginSignUp from '../../components/auth/login_sign_up';
 

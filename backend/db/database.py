@@ -18,4 +18,5 @@ def initialize_db():
     """모든 테이블 생성"""
     from db.models.user_model import User
     from db.models.user_profile_model import UserProfile
+    from db.models.menu_model import Menu
     Base.metadata.create_all(bind=engine)

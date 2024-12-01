@@ -1,3 +1,6 @@
+// src/components/FeedbackButtons.tsx
+import React from 'react';
+
 type FeedbackButtonsProps = {
     onLike: () => void;
     onDislike: () => void;
